@@ -1,5 +1,4 @@
 # http://docs.pytest.org/en/latest/parametrize.html
-# py.test -v -ra -s -k test_param_fixture.py
 
 import pytest
 

@@ -1,9 +1,3 @@
-# sudo -H pip install pytest
-# sudo -H pip install pytest-pep8   # py.test -s --pep8
-# sudo -H pip install pytest-flakes # py.test -s --flakes
-# py.test -s
-# py.test -v -ra -s
-
 import pytest
 
 pytestmark = pytest.mark.usefixtures(

@@ -1,5 +1,3 @@
-# py.test -v -ra -s -k test_param_fixture.py
-
 import pytest
 
 
@@ -13,5 +11,3 @@ def some_fixt(request):
 def test_something(some_fixt):
     """Tests fixture parametrize"""
     print '\nTest where value from fixture = "{0}"'.format(some_fixt)
-
-# Indirect what for?
