@@ -4,7 +4,7 @@ import pytest
 @pytest.fixture
 def some_fixt(request):
     param = getattr(request, 'param', 'nothing provided')
-    return param
+    return param + '_fixtadd'
 
 
 @pytest.mark.parametrize('some_fixt', ['one', 'two', 'three'], indirect=True)
