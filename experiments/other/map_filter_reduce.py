@@ -20,10 +20,9 @@ print 'Fahrenheits:', map(kelv_to_fahr, kelvins)
 
 
 # ---- Filtering ----
-numbers = range(0, 10)
 
-print filter(lambda x: x % 2, numbers)
-print filter(lambda x: x % 2 == 0, numbers)
+print filter(lambda x: x % 2, range(0, 10))
+print filter(lambda x: x % 2 == 0, range(0, 10))
 # > [1, 3, 5, 7, 9]
 # > [0, 2, 4, 6, 8]
 
@@ -35,7 +34,6 @@ print reduce(lambda x, y: x + y, range(1, 11))
 print reduce(lambda x, y: x * y, range(1, 11))
 # > 3628800
 
-func = lambda a, b: a if (a > b) else b
-print reduce(func, [47, 11, 42, 102, 13])
+i = [47, 11, 42, 102, 13]
+print reduce(lambda a, b: a if (a > b) else b, i)
 # > 102
-
