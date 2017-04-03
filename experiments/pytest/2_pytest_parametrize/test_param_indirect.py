@@ -1,5 +1,3 @@
-# http://docs.pytest.org/en/latest/example/parametrize.html#apply-indirect-on-particular-arguments
-
 import pytest
 
 
@@ -12,7 +10,7 @@ def x(request):
 @pytest.fixture
 def y(request):
     print "fixture 'y', param = '%s'" % request.param
-    return request.param * '_fixt_adding'
+    return request.param + '_fixt_adding'
 
 
 @pytest.mark.parametrize('x, y', [('a', 'b')], indirect=['x'])

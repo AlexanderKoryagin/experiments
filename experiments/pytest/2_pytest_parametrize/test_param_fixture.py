@@ -7,7 +7,11 @@ def some_fixt(request):
     return param + '_fixtadd'
 
 
-@pytest.mark.parametrize('some_fixt', ['one', 'two', 'three'], indirect=True)
+@pytest.mark.parametrize(
+    'some_fixt',
+    ['one', 'two', 'three'],
+    indirect=True
+)
 def test_something(some_fixt):
     """Tests fixture parametrize"""
     print '\nTest where value from fixture = "{0}"'.format(some_fixt)

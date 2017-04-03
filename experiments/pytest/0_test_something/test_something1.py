@@ -1,5 +1,6 @@
-import pytest
 import random
+
+import pytest
 
 
 def add_function(a, b):
@@ -9,9 +10,15 @@ def add_function(a, b):
         raise ValueError("'a' or 'b' is not int")
 
 
-@pytest.mark.parametrize('values', [[1, 2, 3], [4, 5, 9], [-2, 4, 2]])
+@pytest.mark.parametrize(
+    'values',
+    [
+        [1, 2, 3],
+        [4, 5, 9],
+        [-2, 4, 2]
+    ]
+)
 def test_add_function(values):
-
     a, b, c = values
     assert c == add_function(a, b)
 

@@ -1,9 +1,10 @@
-# http://docs.pytest.org/en/latest/parametrize.html
-
 import pytest
 
 
-@pytest.mark.parametrize('param', ['one', 'two', 'three', 'four'])
+@pytest.mark.parametrize(
+    'param',
+    ['one', 'two', 'three', 'four']
+)
 def test_something1(param):
     """Tests usage of PyTest for case parametrize"""
     print 'Test with value of "param" = "{0}"'.format(param)
