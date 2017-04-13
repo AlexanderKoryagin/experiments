@@ -1,22 +1,22 @@
-import os
 import logging.config
+import os
 
 import yaml
 
 
 def setup_logging(
-    default_path='logging_cfg.yaml',
-    default_level=logging.INFO,
-    env_key='LOG_CFG'
+        cfg_path='logging_cfg.yaml',
+        log_level=None
 ):
     """Setup logging configuration."""
-    path = default_path
-    value = os.getenv(env_key, None)
-    if value:
-        path = value
-    if os.path.exists(path):
-        with open(path, 'rt') as f:
+    if os.path.exists(cfg_path):
+        with open(cfg_path, 'rt') as f:
             config = yaml.safe_load(f.read())
+
+            if log_level is 'DEBUG':
+                config['handlers']['console']['level'] = log_level
+                config['handlers']['console']['formatter'] = log_level.lower()
+
         logging.config.dictConfig(config)
     else:
-        logging.basicConfig(level=default_level)
+        raise IOError('No such file or directory: %s' % cfg_path)
