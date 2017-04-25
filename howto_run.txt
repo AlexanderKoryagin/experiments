@@ -1,3 +1,4 @@
+py.test -vv
 py.test -s
-py.test -v -ra -s
+py.test -vv -ra -s
 py.test -vv -ra -s -k test_param_fixture.py
