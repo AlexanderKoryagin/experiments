@@ -17,7 +17,7 @@ def test_mytest1(monkeypatch):
     print get_dir_content('/home/')  # ['alex']
 
 
-# -------------------------------------
+# --------------------------------------
 import datetime
 import pytest
 
